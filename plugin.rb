@@ -58,7 +58,7 @@ after_initialize do
           {
             :fallback => "New " + (post.try(:is_first_post?) ? "topic" : "post in #{topic.title}") + " by #{display_name} - #{post_url}",
             :pretext => "New " + (post.try(:is_first_post?) ? "topic" : "post") + " by #{display_name}:",
-            :title => topic.title,
+            :title => "[" + category.slug + "] " + topic.title,
             :title_link => post_url,
             :text => post.excerpt(200, text_entities: false, strip_links: true)
           }
